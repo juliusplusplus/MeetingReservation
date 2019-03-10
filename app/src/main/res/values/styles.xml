@@ -7,5 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!--<style name="mypopwindow_anim_style">-->
+        <!--<item name="android:windowEnterAnimation">@anim/popshow_anim</item>-->
+        <!--&lt;!&ndash; 指定显示的动画xml &ndash;&gt;-->
 
+        <!--<item name="android:windowExitAnimation">@anim/pophidden_anim</item>-->
+        <!--&lt;!&ndash; 指定消失的动画xml &ndash;&gt;-->
+    <!--</style>-->
 </resources>

@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="lightblack">#272727</color>
+    <color name="group_list_gray">#999999</color>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="colorPrimaryDark">#3F51B5</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="light_grey_e6e6e6">#e6e6e6</color>
+    <color name="transparent">#00000000</color>g
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="light_blue_59d1d8">#59d1d8</color>
+    <color name="black_666666">#666666</color>
+    <color name="yellow_page_search_bg">#fffffbfa</color>
+    <color name="login_form_hint">#ffb5b5b5</color>
+    <color name="yellow_light">#ffefa717</color>
+    <color name="text_line_color">#dfdfdd</color>
+    <color name="text_color">#353535</color>
+    <color name="group_list_black_textview">#353535</color>
+    <color name="update">#63B8FF</color>
+    <color name="update1">#4B0082</color>
+    <color name="update2">#CDCDB4</color>
+    <color name="update3">#F5F5DC</color>
+    <declare-styleable name="CircularRing">
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="circleRoundWidth" format="dimension" />
+        <attr name="circleWidth" format="dimension" />
+        <attr name="circleTextColor" format="color" />
+        <attr name="circleNumber" format="integer" />
+        <attr name="circleTextSize" format="dimension" />
+        <attr name="circleColor1" format="color" />
+        <attr name="circleColor2" format="color" />
+        <attr name="circleColor3" format="color" />
+        <attr name="circleColor4" format="color" />
+        <attr name="circleColor5" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ArcProgressBar">
+        <attr name="arcDistance" format="integer"/>
+        <attr name="arcBgColor" format="color"/>
+        <attr name="dottedDefaultColor" format="color"/>
+        <attr name="dottedRunColor" format="color"/>
+        <attr name="dottedLineCount" format="integer"/>
+        <attr name="dottedLineWidth" format="integer"/>
+        <attr name="dottedLineHeight" format="integer"/>
+        <attr name="lineDistance" format="integer"/>
+        <attr name="progressMax" format="integer"/>
+        <attr name="progressTextSize" format="integer"/>
+        <attr name="progressDesc" format="string"/>
+        <attr name="arcText" format="string"/>
+    </declare-styleable>
+
 </resources>
