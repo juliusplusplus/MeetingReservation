@@ -166,8 +166,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 1:
                 if (order == null) {
-                    // order = new Fragment_order();
-                    //transaction.add(R.id.id_content, order);
+                    order = new Fragment_order();
+                    transaction.add(R.id.id_content, order);
                 }else {
                     transaction.show(order);
                 }
