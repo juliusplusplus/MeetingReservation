@@ -39,8 +39,9 @@ public class userphoneActivity extends AppCompatActivity implements View.OnClick
         bt_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                phone.setText(sp.getuserphone("phone")+"");
-                email.setText(sp.getemail("email")+"");
+//                存在问题，应先存入sp
+//                phone.setText(sp.getuserphone("phone")+"");
+//                email.setText(sp.getemail("email")+"");
             }
         });
     }
