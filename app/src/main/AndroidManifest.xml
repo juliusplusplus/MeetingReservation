@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.meetingreservation.Modify_passwordActivity"/>
+        <activity android:name="com.example.meetingreservation.userphoneActivity"/>
     </application>
 
 </manifest>

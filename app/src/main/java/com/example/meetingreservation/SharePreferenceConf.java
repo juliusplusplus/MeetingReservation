@@ -32,4 +32,5 @@ public class SharePreferenceConf {
     public static String userphone="userphone";
     public static String usercredit="usercredit";
 
+    public static String email;
 }

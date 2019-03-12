@@ -14,4 +14,9 @@
         <!--<item name="android:windowExitAnimation">@anim/pophidden_anim</item>-->
         <!--&lt;!&ndash; 指定消失的动画xml &ndash;&gt;-->
     <!--</style>-->
+    <style name="my_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
 </resources>

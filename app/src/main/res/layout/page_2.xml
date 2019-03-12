@@ -96,7 +96,7 @@
                 />
 
             <ImageView
-                android:id="@+id/right_arraw3"
+                android:id="@+id/right_arraw1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

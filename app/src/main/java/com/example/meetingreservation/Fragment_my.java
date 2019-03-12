@@ -67,8 +67,8 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        EventBus.getDefault().register(this);
-        a.clear();
+        //EventBus.getDefault().register(this);
+        //a.clear();
         sp = new SharePreferenceUtil(getContext(), SharePreferenceConf.PERSONINFO);
         super.onCreate(savedInstanceState);
     }
@@ -85,19 +85,17 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
 
 
 
-        Bitmap bt = BitmapFactory.decodeFile(path + "/" + "head.jpg");// 从SD卡中找头像，转换成Bitmap
-
-        if (bt != null) {
-            @SuppressWarnings("deprecation")
-            Drawable drawable = new BitmapDrawable(bt);// 转换成drawable
-            imageView.setImageDrawable(drawable);
-        }
+//        Bitmap bt = BitmapFactory.decodeFile(path + "/" + "head.jpg");// 从SD卡中找头像，转换成Bitmap
+//
+//        if (bt != null) {
+//            @SuppressWarnings("deprecation")
+//            Drawable drawable = new BitmapDrawable(bt);// 转换成drawable
+//            imageView.setImageDrawable(drawable);
+//        }
         return v;
     }
-    @Subscribe
+
     private void initEvent() {
-        weight.setOnClickListener(this);
-        height.setOnClickListener(this);
         imageView.setOnClickListener(this);
         rl_nickname.setOnClickListener(this);
         rl_modifypassword.setOnClickListener(this);
@@ -108,8 +106,9 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
     private void init() {
         if (sp.getuserphone(sp.getUserid()) == 0)
             tv_userphone.setText("--");
+
         else
-            tv_userphone.setText(sp.getuserphone(sp.getUserid()));
+            tv_userphone.setText(sp.getuserphone(sp.getUserid())+"");
 
         if (sp.getusercredit(sp.getUserid()) == 0)
             tv_usercredit.setText("--");
@@ -123,8 +122,11 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
     private void initView(View v) {
         imageView = (CircleImageView) v.findViewById(R.id.profile_image);
         tv_id= (TextView) v.findViewById(R.id.userid);
+        tv_userphone = (TextView) v.findViewById(R.id.tv_userphone);
+        tv_usercredit = (TextView) v.findViewById(R.id.tv_usercredit);
         tv_name= (TextView) v.findViewById(R.id.username);
         rl_nickname=(RelativeLayout)v.findViewById(R.id.nickname);
+        rl_modifypassword=(RelativeLayout)v.findViewById(R.id.Modify_password);
         rl_userphone=(RelativeLayout)v.findViewById(R.id.userphone);
         rl_usercredit= (RelativeLayout)v.findViewById(R.id.usercredit);
         rl_userlogout= (RelativeLayout)v.findViewById(R.id.userlogout);
@@ -134,12 +136,12 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
     public void onStart() {
         super.onStart();
         tv_name.setText(sp.getname());
-        tv_usercredit.setText(sp.getusercredit("usecredit"));
+        tv_usercredit.setText(sp.getusercredit("userid")+"");
     }
 
     @Override
     public void onDestroy() {
-        EventBus.getDefault().unregister(this);//反注册EventBus
+        //EventBus.getDefault().unregister(this);//反注册EventBus
         super.onDestroy();
     }
 
@@ -154,12 +156,12 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
                 phone_intent.setClass(getActivity(),userphoneActivity.class);
                 startActivity(phone_intent);
                 break;
-//            case R.id.usercredit:
-//                Intent credit_intent =new Intent();
-//                credit_intent.setClass(getActivity(),usercreditActivity.class);
-//                credit_intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//                startActivity(credit_intent);
-//                break;
+            case R.id.Modify_password:
+                Intent modify_intent =new Intent();
+                modify_intent.setClass(getActivity(),Modify_passwordActivity.class);
+                modify_intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(modify_intent);
+                break;
             case R.id.userlogout:
                 SharePreferenceUtil logout=new SharePreferenceUtil(getActivity().getApplicationContext(), SharePreferenceConf.PERSONINFO);
                 logout.setUserid("");
@@ -303,7 +305,7 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
 //
 //
 //    }
-    @Subscribe
+
     private void showTypeDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         final AlertDialog dialog = builder.create();
@@ -333,7 +335,7 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
         dialog.setView(view);
         dialog.show();
     }
-    @Subscribe
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode != Activity.RESULT_CANCELED) {
             switch (requestCode) {
@@ -371,7 +373,7 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-    @Subscribe
+
     public void cropPhoto(Uri uri) {
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, "image/*");
@@ -478,4 +480,9 @@ public class Fragment_my extends Fragment implements View.OnClickListener {
 //
 //    }
 
+//    @Subscribe
+//    public void onEventMainThread(WeightEvent event) {
+//
+//        tv_weight.setText(event.getWeight() + "公斤");
+//    }
 }

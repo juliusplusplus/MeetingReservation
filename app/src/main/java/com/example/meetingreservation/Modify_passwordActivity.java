@@ -72,7 +72,7 @@ public class Modify_passwordActivity extends AppCompatActivity implements View.O
                 //    Toast.makeText(getApplicationContext(), "网络不可用", Toast.LENGTH_SHORT).show();
                 else
                 {
-                    //UploadDialog.show(Modify_passwordActivity.this,"正在修改");
+                    UploadDialog.show(Modify_passwordActivity.this,"正在修改");
                     new ModifypassTask().execute(sp.getUserid(),oldpassword.getText().toString(),newpassword.getText().toString());
                 }
             }
@@ -83,7 +83,7 @@ public class Modify_passwordActivity extends AppCompatActivity implements View.O
         switch (category)
         {
             case 1:
-                //UploadDialog.dismiss();
+                UploadDialog.dismiss();
                 Toast.makeText(getApplicationContext(), "密码修改成功,请重新登录！", Toast.LENGTH_SHORT).show();
                 SharePreferenceUtil logout=new SharePreferenceUtil(getApplicationContext(), SharePreferenceConf.PERSONINFO);
                 logout.setUserid("");
@@ -93,23 +93,23 @@ public class Modify_passwordActivity extends AppCompatActivity implements View.O
                 finish();
                 break;
             case 2:
-                //UploadDialog.dismiss();
+                UploadDialog.dismiss();
                 Toast.makeText(getApplicationContext(), "密码修改失败，请稍后重试", Toast.LENGTH_SHORT).show();
                 break;
 
             case 3:
-                //UploadDialog.dismiss();
+                UploadDialog.dismiss();
                 Toast.makeText(getApplicationContext(), "原密码错误", Toast.LENGTH_SHORT).show();
                 newpassword.setText("");
                 newpassword1.setText("");
                 oldpassword.setText("");
                 break;
             case 4:
-                //UploadDialog.dismiss();
+                UploadDialog.dismiss();
                 Toast.makeText(getApplicationContext(), "账户已停用", Toast.LENGTH_SHORT).show();
                 break;
             case 5:
-                //UploadDialog.dismiss();
+                UploadDialog.dismiss();
                 Toast.makeText(getApplicationContext(), "用户不存在", Toast.LENGTH_SHORT).show();
                 break;
         }

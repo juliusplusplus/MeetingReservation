@@ -143,4 +143,12 @@ public class SharePreferenceUtil {
         editor.commit();
     }
 
+    public String getemail(String email) {
+        return sp.getString(SharePreferenceConf.email,"");
+    }
+    public void setemail(String email)
+    {
+        editor.putString(SharePreferenceConf.email, email);
+        editor.commit();
+    }
 }
